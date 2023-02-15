@@ -1,0 +1,101 @@
+package pom.irctc.pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class HotelsBookingPage extends GenericWrappers {
+	
+	
+	
+public HotelsBookingPage(RemoteWebDriver driver, ExtentTest test) {
+		
+		this.driver=driver;
+		this.test=test;
+	}
+	
+	public HotelsBookingPage enterCityOrHotelName(String data) {
+		enterByXpath(prop.getProperty("HotelsBookingPage.xpath.enterCityOrHotelName"), data);
+		return this;
+	}
+	public HotelsBookingPage clickOnCity() {
+		clickByXpath("//strong[text()='City']");
+		return this;
+	}
+	public HotelsBookingPage clickOnCheckInDateBar() {
+		clickByXpath("(//input[@id='filterText']/following::input)[1]");
+		return this;
+	}
+	public HotelsBookingPage clickOnDateHeadder() {
+		clickByXpath("//span[@class='owl-dt-control-content owl-dt-control-button-content']/span");
+		return this;
+	}
+	public HotelsBookingPage clickOnYear(int year) {
+		clickByXpath("//span[text()='"+year+"']");
+		return this;
+	}
+	public HotelsBookingPage clickOnMonth(String month) {
+		clickByXpath("//span[text()='"+month+"']");
+		return this;
+	}
+	public HotelsBookingPage clickOnDate(int date) {
+		clickByXpath("(//span[text()='"+date+"'])[1]");
+		return this;
+	}
+	
+	
+	public HotelsBookingPage clickOnCheckOutDateBar() {
+		clickByXpath("(//input[@id='filterText']/following::input)[2]");
+		return this;
+	}
+	public HotelsBookingPage clickOnCheckOutDateHeadder() {
+		clickByXpath("//span[@class='owl-dt-control-content owl-dt-control-button-content']/span");
+		return this;
+	}
+	public HotelsBookingPage clickOnCheckOutYear(int year) {
+		clickByXpath("//span[text()='"+year+"']");
+		return this;
+	}
+	public HotelsBookingPage clickOnCheckOutMonth(String month) {
+		clickByXpath("//span[text()='"+month+"']");
+		return this;
+	}
+	public HotelsBookingPage clickOnCheckOutDate(int date) {
+		clickByXpath("(//span[text()='"+date+"'])[1]");
+		return this;
+	}
+	
+	
+	
+	public HotelsBookingPage clickOnRoomsGuestBar() {
+		clickByXpath("//input[@id='user-data-wrapper-id']");
+		return this;
+	}
+	public HotelsBookingPage clickOnAdultBar() {
+		clickByXpath("//select[@class='browser-default ng-pristine ng-valid ng-touched']");
+		return this;
+	}
+	
+	
+	public HotelsBookingPage selectOnAdultsNumber(int value) {
+		selectValueByXpath("//select[@name ='hotelAdult']", value);
+		
+		return this;
+	}
+	public HotelsBookingPage clickOnDone() {
+		clickByXpath("(//button[@type='button'])[2]");
+		return this;
+	}
+	public HotelDisplayPage clickOnFindHotel() {
+		clickByXpath("//button[text()='Find Hotel ']");
+		return new HotelDisplayPage(driver,test);
+	}
+	
+	
+	
+	
+	
+	
+}

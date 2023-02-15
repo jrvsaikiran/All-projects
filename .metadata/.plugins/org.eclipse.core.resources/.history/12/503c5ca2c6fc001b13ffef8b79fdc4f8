@@ -1,0 +1,64 @@
+
+
+####### Facebook LoginPage    ############
+
+LoginPage.clickOnEnglish.xpath = //a[text()='English (UK)']
+LoginPage.clickOnCreatNewAccount.xpath = (//a[@role='button'])[2]
+
+####### Facebook SignUpPage    ############
+
+SignUpPage.enterFirstName.xpath = //input[@name='firstname']
+SignUpPage.enterSecondName.xpath = //input[@name='lastname']
+SignUpPage.enterMobileNumberOrEmail.xpath = //input[@name='reg_email__']
+SignUpPage.enterNewPassword.xpath = //input[@name='reg_passwd__']
+SignUpPage.selectDay.xpath = //select[@name='birthday_day']
+SignUpPage.selectMonth.xpath = //select[@name='birthday_month']
+SignUpPage.selectYear.xpath = //select[@name='birthday_year']
+SignUpPage.clickOnGender.xpath = //label[text()='Male']
+
+#####      FORM C Homepage  ###########
+
+Homepage.clickOnSignUpRegistration.xpath = (//a[starts-with(text(),'Sign Up (Registration)')])[1]
+
+#####      FORM C RegistrationPage  ###########
+
+RegistrationPage.enterUserId.xpath = //input[@id='u_id']
+RegistrationPage.enterPassword.xpath = //input[@name='u_pwd']
+RegistrationPage.xpath.enterConformPassword = //input[@name='u_repwd']
+RegistrationPage.xpath.selectSequrityQuestion = //select[@id='u_secques']
+RegistrationPage.xpath.clickSequrityQuestion = (//option[@value='"+option+"'])[1]
+RegistrationPage.xpath.
+RegistrationPage.xpath.
+RegistrationPage.xpath.
+RegistrationPage.xpath.
+RegistrationPage.xpath.
+RegistrationPage.xpath.
+RegistrationPage.xpath.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

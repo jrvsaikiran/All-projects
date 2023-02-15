@@ -1,0 +1,81 @@
+package pom.irctc.testcase;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import pom.irctc.pages.CovidAlertPage;
+import wrappers.ProjectWrappers;
+
+public class TC007 extends ProjectWrappers{
+
+	@BeforeClass
+	public void beforeClass() {
+		
+		testCaseName = "TC007";
+		testCaseDescription = "To verify wheather the user is user is able to register in IRCTC saloon application ";
+		author = "Jakkula Raja Venkata Sai Kiran";
+		catogory = "smoke";
+		browserName = "chrome";
+		appName = "irctc";
+		sheetName = "TC007";		
+	}
+	
+	
+	
+	
+	@Test(dataProvider="fetchData")
+	
+	public void dgdg56(String name, String organisation, String address,
+			String mobile, String email, String request,
+			String orgstation, String destination,String departure,
+			String day, String ofdays, String noofcoach,
+			String passenger, String passenger2
+			, String purpose, String service) {
+		
+		int dayy = Integer.parseInt(day);
+		int dpt = Integer.parseInt(departure);
+		//int pas2 = Integer.parseInt(passenger2);
+		//int pass = Integer.parseInt(passenger);
+		
+		
+		new CovidAlertPage(driver, test)
+		.clickOnOk()
+		
+	
+		.mouseOverOnHolidays()
+		.mouseOverOnStays()
+		.clickOnLounge()
+		.windowChange1()
+		.clickOverOnMenuAtTopRightSide()
+		.clickOnCharter()
+		
+		.clickOntoprightArrowToClose()
+		.clickOnEnquiryForm()
+		.enterNameOfApplicant(name)
+		.enterNameOfOrganisation(organisation)
+		.enterAddress(address)
+		.enterMobileNumber(mobile)
+		.enteremail(email)
+		.selectrequestfor(request)
+		.enterOrginatingStation(orgstation)
+		.enterDestinatingStation(destination)
+		.clickOnDateOfDepartureBar()
+		//.selectYear("2021")
+		.clickOnNextMonthIconOnDeparture()
+		.clickOnDateOnDeparture(dpt)
+		.clickOnDateOfArrival()
+		//.selectArrivalYear("2021")
+		.clickOnNextMonthIconOnArrival()
+		.clickArrivalDay(dayy)
+		.enterDurationOfTourInTermsOfNumberofDays(ofdays)
+		.enterNumberAndTypeOfCoachesRequired(noofcoach)
+		.enterNumberOfPassengers(passenger)
+		.enterNumberOfPassengers1(passenger2)
+		.enterPurposeOfCharter(purpose)
+		.enterAdditionalServicesRequired(service)
+		.clickOnSWubmit()
+		
+		
+		;
+	}
+}

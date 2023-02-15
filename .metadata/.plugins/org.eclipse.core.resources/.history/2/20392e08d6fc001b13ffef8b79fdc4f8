@@ -1,0 +1,93 @@
+package pom.phptravels.pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class RegistrationOfPhpTravels extends GenericWrappers {
+	
+	public RegistrationOfPhpTravels(RemoteWebDriver driver, ExtentTest test) {
+		this.driver = driver; 
+		this.test = test;
+	}
+	
+	public RegistrationOfPhpTravels enterFirstName(String data) {
+		enterByXpath("//input[@name='firstname']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterLastName(String data) {
+		enterByXpath("//input[@name='lastname']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterEmailId(String data) {
+		enterByXpath("//input[@name='email']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels clickONNation() {
+		clickByXpath("//div[@class='selected-dial-code']");
+		return this;
+	}
+	
+	public RegistrationOfPhpTravels clickByNation() {
+		clickByXpath("//span[text()='India (भारत)']");
+		return this;
+	}
+	
+	public RegistrationOfPhpTravels enterPhoneNumber(String data) {
+		enterByXpath("//input[@id='inputPhone']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterCompanyName(String data) {
+		enterByXpath("//input[@name='companyname']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterStreetAddress(String data) {
+		enterByXpath("//input[@name='address1']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterStreetAddress1(String data) {
+		enterByXpath("//input[@name='address2']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels entercity(String data) {
+		enterByXpath("//input[@name='city']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterState(String data) {
+		enterByXpath("//input[@name='state']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels selectState(String value) {
+		selectVisibileTextByXpath("//select[@name='state']", value);
+		return this;
+	}
+	
+	
+	public RegistrationOfPhpTravels enterPostCode(String data) {
+		enterByXpath("//input[@name='postcode']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels selectCountry(int value) {
+		selectIndexByXpath("//select[starts-with(@name,'country')]", value);
+		return this;
+	}
+	public RegistrationOfPhpTravels selectHowDidYouFindUs(String value) {
+		selectVisibileTextByXpath("//select[starts-with(@name,'country')]/following::select", value);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterMobileNumber(String data) {
+		enterByXpath("//input[@name='customfield[2]']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterPassword(String data) {
+		enterByXpath("//input[@name='password']", data);
+		return this;
+	}
+	public RegistrationOfPhpTravels enterConformPassword(String data) {
+		enterByXpath("//input[@name='password2']", data);
+		return this;
+	}
+	
+}

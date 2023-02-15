@@ -1,0 +1,122 @@
+package pom.irctc.pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class SaloonMandatoryCheck extends GenericWrappers{
+	
+	public SaloonMandatoryCheck(RemoteWebDriver driver, ExtentTest test) {
+		this.driver = driver; 
+		this.test = test;
+	}
+	
+	
+	
+	public SaloonMandatoryCheck enterNameOfApplicant(String data) {
+		enterByXpath("//input[@name='name']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterNameOfOrganisation(String data) {
+		enterByXpath("//input[@name='organization']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterAddress(String data) {
+		enterByXpath("//input[@name='address']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterMobileNumber(String data) {
+		enterByXpath("//input[@name='mobile']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enteremail(String data) {
+		enterByXpath("//input[@placeholder='Email'] ", data);
+		return this;
+	}
+	public SaloonMandatoryCheck selectrequestfor(String value) {
+		selectVisibileTextByXpath("//select[@name='requestFor']", value);
+		return this;
+	}
+	public SaloonMandatoryCheck enterOrginatingStation(String data) {
+		enterByXpath("//input[@name='originStation']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterDestinatingStation(String data) {
+		enterByXpath("//input[@placeholder='Destination Station*'] ", data);
+		return this;
+	}
+	
+	
+	public SaloonMandatoryCheck clickOnDateOfDepartureBar() {
+		clickByXpath("//input[@name='checkInDate']");
+		return this;
+	}
+	public SaloonMandatoryCheck selectYear(String value) {
+		selectVisibileTextByXpath("(//select[@style='width:14px;background-color:transparent;border:0px;float:right;margin: 8px 0;color: #fff;'])[1]", value);		
+		return this;
+	}
+	
+	
+	
+	
+	
+	public SaloonMandatoryCheck clickOnNextMonthIconOnDeparture() {
+		clickByXpath("(//i[@class='fa fa-angle-right'])[1]");
+		return this;
+	}
+	public SaloonMandatoryCheck clickOnDateOnDeparture(int day) {
+		clickByXpath("(//span[text()='"+day+"'])[1]");
+		return this;
+	}
+	public SaloonMandatoryCheck clickOnDateOfArrival() {
+		clickByXpath("(//input[@name='originStation']/following::input)[3]");
+		return this;
+	}
+	public SaloonMandatoryCheck selectArrivalYear(String value) {
+		selectVisibileTextByXpath("(//select[@style='width:14px;background-color:transparent;border:0px;float:right;margin: 8px 0;color: #fff;'])[2]", value);		
+		return this;
+	}
+	
+	
+	public SaloonMandatoryCheck clickOnNextMonthIconOnArrival() {
+		clickByXpath("(//i[@class='fa fa-angle-right'])[2]");
+		return this;
+	}
+	public SaloonMandatoryCheck clickArrivalDay(int day) {
+		clickByXpath("(//span[text()='"+day+"'])[2]");
+		return this;
+	}
+	public SaloonMandatoryCheck enterDurationOfTourInTermsOfNumberofDays(String data) {
+		enterByXpath("//input[@name='durationPeriod']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterNumberAndTypeOfCoachesRequired(String data) {
+		enterByXpath("//input[@placeholder='Number and type of coaches required'] ", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterNumberOfPassengers(String data) {
+		enterByXpath("(//input[@placeholder='Number and type of coaches required'] //following::input)[1]", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterNumberOfPassengers1(String data) {
+		enterByXpath("(//input[@placeholder='Number and type of coaches required'] //following::input)[2]", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterPurposeOfCharter(String data) {
+		enterByXpath("//textarea[@name='charterPurpose']", data);
+		return this;
+	}
+	public SaloonMandatoryCheck enterAdditionalServicesRequired(String data) {
+		enterByXpath("//textarea[@name='charterPurpose']//following::textarea", data);
+		return this;
+	}
+	public SaloonMandatoryCheck clickOnSWubmit() {
+		clickByXpath("//button[text()='Submit ']");
+		return this;
+	}
+	
+	
+
+}

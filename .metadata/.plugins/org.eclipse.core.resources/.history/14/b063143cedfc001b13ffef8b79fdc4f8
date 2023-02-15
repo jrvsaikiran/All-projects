@@ -1,0 +1,108 @@
+package pom.irctc.pages;
+
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class RegistrationPage extends GenericWrappers{
+	
+	
+	public RegistrationPage(RemoteWebDriver driver, ExtentTest test) {
+		this.driver = driver; 
+		this.test = test;
+	}
+	
+	
+	public RegistrationPage enterUserName(String data) {
+		enterByXpath("//input[@id='userName']", data);
+		return this;
+	}
+	public RegistrationPage enterPassword(String data) {
+		enterByXpath("//input[@id='usrPwd']", data);
+		return this;
+	}
+	public RegistrationPage enterConformPassword(String data) {
+		enterByXpath("//input[@id='cnfUsrPwd']", data);
+		return this;
+	}
+	public RegistrationPage clickOnLanguage() {
+		clickByXpath("//div[starts-with(@class,'ng-tns-c66-14 ui-dropdown ui-widget ui-state-default ui-corner-all')]");
+		return this;
+	}
+	public RegistrationPage clickOnPreferredlanguage(String language) {
+		clickByXpath("//span[text()='"+language+"']");
+		return this;
+	}
+	
+	
+	public RegistrationPage clickOnEnglish() {
+		clickByXpath("//span[text()='English']");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion() {
+		clickByXpath("//div[starts-with(@class,'ng-tns-c66-15 ')]");
+		return this;
+	}
+	
+	public RegistrationPage clickOnSequrityQuestionNumber(int questionnumber) {
+		clickByXpath("(//span[@class='ng-star-inserted'])["+questionnumber+"]");
+		return this;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public RegistrationPage clickOnSequrityQuestion1() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[1]");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion2() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[2]");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion3() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[3]");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion4() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[4]");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion5() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[5]");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion6() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[6]");
+		return this;
+	}
+	
+	public RegistrationPage clickOnSequrityQuestion7() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[7]");
+		return this;
+	}
+	public RegistrationPage clickOnSequrityQuestion8() {
+		clickByXpath("(//span[@class='ng-star-inserted'])[8]");
+		return this;
+	}
+	public RegistrationPage enterSequrityAnswer(String data) {
+		enterByXpath("(//input[@type='text'])[4]", data);
+		return this;
+	}
+	public PersonalDetailsForReg clickOnSubmit() {
+		clickByXpath("(//button[@type='submit'])[2]");
+		return new PersonalDetailsForReg(driver,test);
+	}
+	public PersonalDetailsForReg clickOnPersonaldetails() {
+		clickByXpath("//span[text()='Personal Details']");
+		return new PersonalDetailsForReg(driver,test);
+	}
+	
+	
+}

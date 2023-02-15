@@ -1,0 +1,61 @@
+package trail;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Trail {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.navigate().to("https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt");
+		driver.switchTo().frame("iframeResult");
+		Thread.sleep(3000);
+		driver.findElementByXPath("/html/body/button").click();
+		driver.switchTo().alert().sendKeys("Aravind");
+		String getalerttext=driver.switchTo().alert().getText();
+		System.out.println(getalerttext);
+		driver.switchTo().alert().accept();
+		String Apptext=driver.findElementById("demo").getText();
+		System.out.println(Apptext);
+		if(Apptext.contains("Aravind"))
+		{
+			System.out.println("Name is printed in the Application");
+		}
+		else
+		{
+			System.out.println("Name is not printed in the Application");
+		}
+		driver.navigate().refresh();
+		driver.switchTo().frame("iframeResult");
+		Thread.sleep(3000);
+		driver.findElementByXPath("/html/body/button").click();
+		driver.switchTo().alert().sendKeys("Aravind");
+		String getalerttextone=driver.switchTo().alert().getText();
+		System.out.println(getalerttextone);
+		driver.switchTo().alert().dismiss();
+		String Apptext1=driver.findElementById("demo").getText();
+		System.out.println(Apptext1);
+		if(Apptext1.contains("Aravind"))
+		{
+			System.out.println("Name is printed in the Application");
+		}
+		else
+		{
+			System.out.println("Name is not printed in the Application");
+		}
+		Thread.sleep(3000);
+		driver.switchTo().defaultContent();
+		driver.findElementById("tryhome").click();
+		 
+	}  
+		}
+		
+		
+		
+		
+	

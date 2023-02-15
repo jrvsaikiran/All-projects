@@ -1,0 +1,152 @@
+package pom.irctc.pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class PersonalDetailsForReg extends GenericWrappers{
+
+	
+	public PersonalDetailsForReg (RemoteWebDriver driver , ExtentTest test) {
+		this.driver=driver;
+		this.test=test;
+	}
+	
+	
+
+	public PersonalDetailsForReg enterFirstName(String data) {
+		enterByXpath("//input[@id='firstName']", data);
+		return this;
+	}
+	public PersonalDetailsForReg enterSecondName(String data) {
+		enterByXpath("//input[@name='middleName']", data);
+		return this;
+	}
+	public PersonalDetailsForReg enterLastName(String data) {
+		enterByXpath("//input[@name='lastname']", data);
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation() {
+		clickByXpath("//div[@class='ng-tns-c66-16 ui-dropdown ui-widget ui-state-default ui-corner-all']");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnSpecificOccupation(int occupation) {
+		//range 1-7
+		clickByXpath("(//span[@class='ng-star-inserted'])["+occupation+"]");
+		return this;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public PersonalDetailsForReg clickOnOccupation1() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[1]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation2() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[2]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation3() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[3]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation4() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[4]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation5() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[5]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation6() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[6]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation7() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[7]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnOccupation8() {
+		clickByXpath("(//li[@class='ui-dropdown-item ui-corner-all'])[8]");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnDateOfBirth() {
+		clickByXpath("(//input[@type='text'])[9]");
+		return this;
+	}
+	public PersonalDetailsForReg enterDOB(String data) {
+		enterByXpath("(//input[@type='text'  and @autocomplete='off'])[1]", data);
+		return this;
+	}
+	
+	
+	
+	public PersonalDetailsForReg selectYear(int value) {
+		selectValueByXpath("//select[@class='ui-datepicker-year ng-tns-c59-10 ng-star-inserted' and @tabindex='0']", value);
+		return this;
+	}
+	public PersonalDetailsForReg selectMonth(String value) {
+		selectVisibileTextByXpath("//select[@class='ui-datepicker-month ng-tns-c59-10 ng-star-inserted']", value);
+		return this;
+	}
+	public PersonalDetailsForReg clickOnDay(int day) {
+		clickByXpath("//a[text()='"+day+"']");
+		
+		return this;
+	}
+	
+	public PersonalDetailsForReg clickOnMatrialStatus(String status) {
+		clickByXpath("//label[text()='"+status+"']");
+		return this;
+	}
+	
+	
+	public PersonalDetailsForReg selectNation(int value) {
+		selectValueByXpath("//select[@formcontrolname='resCountry']", value);
+		return this;
+	}
+	public PersonalDetailsForReg clickOnGender(String gender) {
+		clickByXpath("//span[text()='"+gender+"']");
+		return this;
+	}
+	
+	
+	
+	
+	public PersonalDetailsForReg clickOnMale() {
+		clickByXpath("//span[text()='Male']");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnFemale() {
+		clickByXpath("//span[text()='Female']");
+		return this;
+	}
+	public PersonalDetailsForReg clickOnTransGender() {
+		clickByXpath("//span[text()='Female']/following::span");
+		return this;
+	}
+	public PersonalDetailsForReg enterEmail(String data) {
+		enterByXpath("//input[@name='email']", data);
+		return this;
+	}
+	public PersonalDetailsForReg enterMobile(String data) {
+		enterByXpath("(//input[@name='email']/following::input)[2]", data);
+		return this;
+	}
+	public PersonalDetailsForReg selectNationality(String value) {
+		selectVisibileTextByXpath("//select[starts-with(@formcontrolname,'nationality')]", value);
+		return this;
+	}
+	public AddressFieldReg clickOnContinue() {
+		clickByXpath("//button[starts-with(@class,'search_btn train_Search ng-star-inserted')]");
+		return new AddressFieldReg(driver,test);
+	}   
+	
+	
+}

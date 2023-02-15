@@ -1,0 +1,176 @@
+package pom.panindia.pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class ApplicationPagePanIndia extends GenericWrappers{
+	
+	
+	public ApplicationPagePanIndia(RemoteWebDriver driver, ExtentTest test) {
+		this.driver = driver; 
+		this.test = test;
+	}
+	
+	
+	
+	public ApplicationPagePanIndia selectTitle(String value) {
+		selectVisibileTextByXpath("//select[@id='pan_title']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia enterFirstName(String data) {
+		enterByXpath("//input[contains(@id,'pan_firstname')]", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterMiddleName(String data) {
+		enterByXpath("//input[@name='pan_middlename']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterLastName(String data) {
+		enterByXpath("//input[contains(@id,'pan_lastname')]", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterFathersFirstName(String data) {
+		enterByXpath("//input[@name='pan_fatherfirstname']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterFathersMiddleName(String data) {
+		enterByXpath("//input[@name='pan_fathermiddlename']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterFathersLastName(String data) {
+		enterByXpath("//input[@name='pan_fatherlastname']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterMobileNumber(String data) {
+		enterByXpath("//input[@id='pan_mobilenumber']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterEmail(String data) {
+		enterByXpath("//input[@name='pan_email']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia selectSourceOfIncome(String data) {
+		enterByXpath("//select[contains(@id,'pan_sourceofincome')]", data);
+		return this;
+	}
+	
+	
+	
+	public ApplicationPagePanIndia clickOnResidence() {
+		clickByXpath("//input[@id='residence' and @value='1']");
+		return this;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public ApplicationPagePanIndia clickOnOffice() {
+		clickByXpath("//input[@name='pan_communication' and @value='2']");
+		return this;
+	}
+	public ApplicationPagePanIndia enterDateOfBirth(String data) {
+		enterByXpath("//input[@name='pan_dob']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterHouseNumberOrBuildingNumber(String data) {
+		enterByXpath("//input[@name='pan_addressline1']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterAreaOrRoadStreet(String data) {
+		enterByXpath("//input[@name='pan_addressline2']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterCItyOrTownOrDistrict(String data) {
+		enterByXpath("//input[@name='pan_cityname']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia selectStateOrUnionTeritory(String value) {
+		selectVisibileTextByXpath("//select[@id='pan_state']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia selectCountry(String value) {
+		selectVisibileTextByXpath("//select[@name='pan_country']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia enterPinCode(String data) {
+		enterByXpath("//input[@name='pan_pincode']", data);
+		return this;
+	}
+	
+	
+	public ApplicationPagePanIndia enterNameOfOffice(String data) {
+		enterByXpath("//input[@id='pan_officename']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterHouseNumber(String data) {
+		enterByXpath("//input[@name='pan_officeaddressline1']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterAreaStreet(String data) {
+		enterByXpath("//input[@name='pan_officeaddressline2']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia enterCity(String data) {
+		enterByXpath("//input[@name='pan_officecityname']", data);
+		return this;
+	}
+	public ApplicationPagePanIndia selectOfficeState(String value) {
+		selectVisibileTextByXpath("//select[@name='pan_officestate']", value);
+		return this;
+	}
+	
+	public ApplicationPagePanIndia enterPincode(String data) {
+		enterByXpath("//input[@name='pan_officepincode']", data);
+		return this;
+	}
+	
+	
+	
+	
+	
+	public ApplicationPagePanIndia selectIdentityProof(String value) {
+		selectVisibileTextByXpath("//select[@name='pan_identityproof']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia selectAddressProof(String value) {
+		selectVisibileTextByXpath("//select[@name='pan_addressproof']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia selectDateOfBirthProof(String value) {
+		selectVisibileTextByXpath("//select[@name='pan_DOBproof']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia selectDateOfBirthProof1(int value) {
+		selectIndexByXpath("//select[@name='pan_DOBproof']", value);
+		return this;
+	}
+	
+	public ApplicationPagePanIndia selectAadarProof1(String value) {
+		selectVisibileTextByXpath("//select[@id='pan_aadhaarproof']", value);
+		return this;
+	}
+	
+	
+	
+	
+	public ApplicationPagePanIndia selectAadarProof(String value) {
+		selectVisibileTextByXpath("//select[@id='pan_aadhaarproof']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia selectOfficeAddressProof(String value) {
+		selectVisibileTextByXpath("//select[@name='pan_officeaddressproof']", value);
+		return this;
+	}
+	public ApplicationPagePanIndia clickOnAgree() {
+		clickByXpath("//input[@name='pan_source[]']");
+		return this;
+	}
+	
+	
+}

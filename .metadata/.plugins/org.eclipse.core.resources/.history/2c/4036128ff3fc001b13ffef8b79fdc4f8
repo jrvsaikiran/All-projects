@@ -1,0 +1,128 @@
+package pom.irctc.pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+
+import wrappers.GenericWrappers;
+
+public class AddressFieldReg extends GenericWrappers{
+	
+	
+	
+	public AddressFieldReg(RemoteWebDriver driver, ExtentTest test) {
+		this.driver=driver;
+		this.test=test;
+	}
+
+	public AddressFieldReg enterFlatDoorNumber(String data) {
+		enterByXpath("//input[@name='resAddress1']", data);
+		return this;
+	}
+	public AddressFieldReg enterStreetLane(String data) {
+		enterByXpath("//input[@name='resAddress2']", data);
+		return this;
+	}
+	public AddressFieldReg enterAddressLocality(String data) {
+		enterByXpath("//input[@name='resAddress3']", data);
+		return this;
+	}
+	public AddressFieldReg enterPincode(String data) {
+		enterByXpath("//input[@name='resPinCode']", data);
+		return this;
+	}
+	public AddressFieldReg enterState(String data) {
+		enterByXpath("//input[@name='resState']", data);
+		return this;
+	}
+	
+	public AddressFieldReg enterCity(String data) {
+		enterByXpath("//input[@id='resCity']", data);
+		return this;
+	}
+	public AddressFieldReg enterPostOffice(String data) {
+		enterByXpath("//input[@id='resPostOff']", data);
+		return this;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public AddressFieldReg selectCity(String value) {
+		selectVisibileTextByXpath("//select[@formcontrolname='resCity']", value);
+		return this;
+	}
+	public AddressFieldReg selectPostOffice(String value) {
+		selectVisibileTextByXpath("//select[@formcontrolname='resPostOff']", value);
+		return this;
+	}
+	public AddressFieldReg enterPhoneNumber(String data) {
+		enterByXpath("//input[@id='resPhone']", data);
+		return this;
+	}
+	public AddressFieldReg clickOnNo() {
+		clickByXpath("(//div[@aria-checked='true' and @role='radio'])[2]");
+		return this;
+	}
+	public AddressFieldReg enterResidenceFlatDoorNumber(String data) {
+		enterByXpath("//input[@name='offAddress1']", data);
+		return this;
+	}
+	public AddressFieldReg enterResidenceStreetLane(String data) {
+		enterByXpath("//input[@name='offAddress2']", data);
+		return this;
+	}
+	public AddressFieldReg enterResidenceAddressLocality(String data) {
+		enterByXpath("//input[@name='offAddress3']", data);
+		return this;
+	}
+	public AddressFieldReg clickOnCountry() {
+		clickByXpath("//span[text()='Select a Country']");
+		return this;
+	}
+	public AddressFieldReg clickOnSpecificCountry(String nameofcountry) {
+		clickByXpath("//span[text()='"+nameofcountry+"']");
+		return this;
+	}
+	public AddressFieldReg enterResidencePincode(String data) {
+		enterByXpath("//input[@id='offPinCode']", data);
+		return this;
+	}
+	public AddressFieldReg enterResidenceOfficeState(String data) {
+		enterByXpath("//input[@id='offState']", data);
+		return this;
+	}
+	public AddressFieldReg enterResidencecity(String data) {
+		enterByXpath("(//input[@id='offPinCode']/following::input)[2]", data);
+		return this;
+	}
+	public AddressFieldReg selectCict(String value) {
+		selectVisibileTextByXpath("//select[@formcontrolname='offCity']", value);
+		return this;
+	}
+	public AddressFieldReg selectPostOffice1(String value) {
+		selectVisibileTextByXpath("//select[@formcontrolname='offPostOff']", value);
+		return this;
+	}
+	
+	
+	
+	public AddressFieldReg enterResidenceOfficePostoffice(String data) {
+		enterByXpath("//input[@id='offPostOff']", data);
+		return this;
+	}
+	public AddressFieldReg enterResidencePhoneNumber(String data) {
+		enterByXpath("//input[@name='offPhone']", data);
+		return this;
+	}
+	public AddressFieldReg clickOnTermsConditions() {
+		clickByXpath("//input[@class='ng-untouched ng-pristine ng-valid']");
+		return this;
+	}
+	
+	
+}

@@ -1,0 +1,99 @@
+package pom.irctc.testcase;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import pom.irctc.pages.CovidAlertPage;
+import wrappers.ProjectWrappers;
+
+public class TC005 extends ProjectWrappers {
+	
+	
+	@BeforeClass
+	public void beforeClass() {
+		testCaseName = "TC005";
+		testCaseDescription = "To verify wheather the user is user is able to register in IRCTC FTR application ";
+		author = "Jakkula Raja Venkata Sai Kiran";
+		catogory = "smoke";
+		browserName = "chrome";
+		appName = "irctc";
+				
+	}
+	
+	
+	
+@Test
+	public void gfvf78() {
+		
+		new CovidAlertPage(driver,test)
+		.clickOnOk()
+		//.mouseOverOnHolidays()
+		.clickHolidays()
+		.clickOnStays()
+		//.mouseOverOnStays()
+		.clickOnLounge()
+		//.switchToLastWindow()
+		.windowChange1()
+		.clickOverOnMenuAtTopRightSide()
+		//.mouseOverOnMenuAtTopRightSide()
+		
+		.clickOnBookYourcoachOrTrain()
+		.windowChange2()
+		//.windowChange2()
+		.clickOnNewUserOrSignUp()
+		
+		.enterUserId(id)
+		.enterPassword(pass)
+		.enterConformPassword(conpss)
+		.selectSequrityQuestion(squque)
+		.enterSequrityAnswer(sqans)
+		.clickOnDateBar()
+		.selectYear(year)
+		.selectMonth(month)
+		.clickOnDate(date)
+		.clickOnGender(gender)
+		.clickOnMaritalStatus(status)
+		.enterEmail(email)
+		.selectOccupation(occupation)
+		.enterFirstName(fname)
+		.enterMiddleName(mname)
+		
+		String id, String pass, String conpss,String squque,
+		String ,
+		
+		
+		
+		
+		.enterLastName(lname)
+		.selectNation(nation)
+		.enterFlatOrDoorNumber(flat)
+		.enterStreetNumber(street)
+		.enterArear(area)
+		.selectCountry(country)
+		.enterMobileNumber(mobnumb)
+		//.clickOnNo()
+		.enterPincode(pincode)
+		
+		.clickOnCity()
+		.selectCityOrTown(city)
+		.selectState(state)
+		.selectPostoffice(postoff)
+		.clickOnNo()
+		.enterResidenceFlatOrDoorNumber(resflat)
+		.enterResidenceStreetNumber(resstreet)
+		.enterResidenceArear(resarea)
+		.selecResidenceCountry(rescountry)
+		.enterResidenceMobileNumber(resmobilr)
+		.enterResidencePincode(respin)
+		
+		.clickOnResidenceCity()
+		.selectResidenceCityOrTown(rescity)
+		.selectResidenceState(resstate)
+		.selectResidencePostOffice(respostoff)
+		
+		;
+		
+	}
+	
+	
+}

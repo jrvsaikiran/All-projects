@@ -1,0 +1,84 @@
+
+
+####### Facebook LoginPage    ############
+
+LoginPage.clickOnEnglish.xpath = //a[text()='English (UK)']
+LoginPage.clickOnCreatNewAccount.xpath = (//a[@role='button'])[2]
+
+####### Facebook SignUpPage    ############
+
+SignUpPage.xpath.enterFirstName = //input[@name='firstname']
+SignUpPage.xpath.enterSecondName = //input[@name='lastname']
+SignUpPage.xpath.enterMobileNumberOrEmail = //input[@name='reg_email__']
+SignUpPage.xpath.enterNewPassword = //input[@name='reg_passwd__']
+SignUpPage.xpath.selectDay = //select[@name='birthday_day']
+SignUpPage.selectMonth.xpath = //select[@name='birthday_month']
+SignUpPage.selectYear.xpath = //select[@name='birthday_year']
+SignUpPage.clickOnGender.xpath = //label[text()='Male']
+
+#####      FORM C Homepage  ###########
+
+Homepage.clickOnSignUpRegistration.xpath = (//a[starts-with(text(),'Sign Up (Registration)')])[1]
+
+#####      FORM C RegistrationPage  ###########
+
+RegistrationPage.enterUserId.xpath = //input[@id='u_id']
+RegistrationPage.enterPassword.xpath = //input[@name='u_pwd']
+RegistrationPage.xpath.enterConformPassword = //input[@name='u_repwd']
+RegistrationPage.xpath.selectSequrityQuestion = //select[@id='u_secques']
+RegistrationPage.xpath.clickSequrityQuestion = (//option[@value='"+option+"'])[1]
+RegistrationPage.xpath.enterYourAnswer = //input[@id='u_secans']
+RegistrationPage.xpath.enterName = //input[contains(@id,'u_name')]
+RegistrationPage.xpath.selectGender = //select[starts-with(@id,'u_gender')]
+RegistrationPage.xpath.enterDateOfBirth = //input[contains(@id,'u_dob')]
+RegistrationPage.xpath.enterDesignation = //input[contains(@id,'u_designation')]
+RegistrationPage.xpath.enterEmailId = //input[@name='u_emailid']
+RegistrationPage.xpath.enterMobile = //input[@name='u_mobile']
+RegistrationPage.xpath.enterPhoneNumber = //input[@name='u_phone']
+RegistrationPage.xpath.selectNationality = //select[starts-with(@id,'u_nationality')]
+RegistrationPage.xpath.enterName1 = //input[@name='name']
+RegistrationPage.xpath.enterCapasity = //input[@name='capacity']
+RegistrationPage.xpath.enterAddress = //textarea[@id='address']
+RegistrationPage.xpath.selectState = //select[@name='state']
+RegistrationPage.xpath.selectCityOrDistrict = //select[@name='city_distr']
+RegistrationPage.xpath.selectAccomodationType = //select[@name='acco_type']
+RegistrationPage.xpath.selectAccomodationGrade = //select[@name='star_rat']
+RegistrationPage.xpath.enterEmailId1 = //input[@name='email']
+RegistrationPage.xpath.enterMobile1 = //input[@name='mcontact']
+RegistrationPage.xpath.enterPhoneNumber1 = //input[@name='contact']
+RegistrationPage.xpath.enterName11 = //input[@name='name_o']
+RegistrationPage.xpath.enterAddress1 = //input[@name='address_o']
+RegistrationPage.xpath.selectState1 = //select[@id='state_o']
+RegistrationPage.xpath.selectCityOrDistrict1 = //select[@name='citydistr_o']
+RegistrationPage.xpath.enterEmailId11 = //input[@name='emailid_o']
+RegistrationPage.xpath.enterPhoneNumber11 = //input[@name='phoneno_o']
+RegistrationPage.xpath.enterMobileNumber = //input[@name='mobile_o']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

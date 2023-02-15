@@ -1,0 +1,197 @@
+
+
+####### TC001	Facebook LoginPage    ############
+
+LoginPage.clickOnEnglish.xpath = //a[text()='English (UK)']
+LoginPage.clickOnCreatNewAccount.xpath = (//a[@role='button'])[2]
+
+####### Facebook SignUpPage    ############
+
+SignUpPage.xpath.enterFirstName = //input[@name='firstname']
+SignUpPage.xpath.enterSecondName = //input[@name='lastname']
+SignUpPage.xpath.enterMobileNumberOrEmail = //input[@name='reg_email__']
+SignUpPage.xpath.enterNewPassword = //input[@name='reg_passwd__']
+SignUpPage.xpath.selectDay = //select[@name='birthday_day']
+SignUpPage.selectMonth.xpath = //select[@name='birthday_month']
+SignUpPage.selectYear.xpath = //select[@name='birthday_year']
+SignUpPage.clickOnGender.xpath = //label[text()='Male']
+
+#####   TC002   FORM C Homepage  ###########
+
+Homepage.clickOnSignUpRegistration.xpath = (//a[starts-with(text(),'Sign Up (Registration)')])[1]
+
+
+#####      FORM C RegistrationPage  ###########
+RegistrationPage.enterUserId.xpath = //input[@id='u_id']
+RegistrationPage.enterPassword.xpath = //input[@name='u_pwd']
+RegistrationPage.xpath.enterConformPassword = //input[@name='u_repwd']
+RegistrationPage.xpath.selectSequrityQuestion = //select[@id='u_secques']
+RegistrationPage.xpath.clickSequrityQuestion = (//option[@value='"+option+"'])[1]
+RegistrationPage.xpath.enterYourAnswer = //input[@id='u_secans']
+RegistrationPage.xpath.enterName = //input[contains(@id,'u_name')]
+RegistrationPage.xpath.selectGender = //select[starts-with(@id,'u_gender')]
+RegistrationPage.xpath.enterDateOfBirth = //input[contains(@id,'u_dob')]
+RegistrationPage.xpath.enterDesignation = //input[contains(@id,'u_designation')]
+RegistrationPage.xpath.enterEmailId = //input[@name='u_emailid']
+RegistrationPage.xpath.enterMobile = //input[@name='u_mobile']
+RegistrationPage.xpath.enterPhoneNumber = //input[@name='u_phone']
+RegistrationPage.xpath.selectNationality = //select[starts-with(@id,'u_nationality')]
+RegistrationPage.xpath.enterName1 = //input[@name='name']
+RegistrationPage.xpath.enterCapasity = //input[@name='capacity']
+RegistrationPage.xpath.enterAddress = //textarea[@id='address']
+RegistrationPage.xpath.selectState = //select[@name='state']
+RegistrationPage.xpath.selectCityOrDistrict = //select[@name='city_distr']
+RegistrationPage.xpath.selectAccomodationType = //select[@name='acco_type']
+RegistrationPage.xpath.selectAccomodationGrade = //select[@name='star_rat']
+RegistrationPage.xpath.enterEmailId1 = //input[@name='email']
+RegistrationPage.xpath.enterMobile1 = //input[@name='mcontact']
+RegistrationPage.xpath.enterPhoneNumber1 = //input[@name='contact']
+RegistrationPage.xpath.enterName11 = //input[@name='name_o']
+RegistrationPage.xpath.enterAddress1 = //input[@name='address_o']
+RegistrationPage.xpath.selectState1 = //select[@id='state_o']
+RegistrationPage.xpath.selectCityOrDistrict1 = //select[@name='citydistr_o']
+RegistrationPage.xpath.enterEmailId11 = //input[@name='emailid_o']
+RegistrationPage.xpath.enterPhoneNumber11 = //input[@name='phoneno_o']
+RegistrationPage.xpath.enterMobileNumber = //input[@name='mobile_o']
+
+
+######		TC003	panindia ApplicationPagePanIndia 	##########
+ApplicationPagePanIndia.xpath.selectTitle = //select[@id='pan_title']
+ApplicationPagePanIndia.xpath.enterFirstName = //input[contains(@id,'pan_firstname')]
+ApplicationPagePanIndia.xpath.enterMiddleName = //input[@name='pan_middlename']
+ApplicationPagePanIndia.xpath.enterLastName = //input[contains(@id,'pan_lastname')]
+ApplicationPagePanIndia.xpath.enterFathersFirstName =  //input[@name='pan_fatherfirstname']
+ApplicationPagePanIndia.xpath.enterFathersMiddleName = //input[@name='pan_fathermiddlename']
+ApplicationPagePanIndia.xpath.enterFathersLastName = //input[@name='pan_fatherlastname']
+ApplicationPagePanIndia.xpath.enterMobileNumber = //input[@id='pan_mobilenumber']
+ApplicationPagePanIndia.xpath.enterEmail = //input[@name='pan_email']
+ApplicationPagePanIndia.xpath.selectSourceOfIncome = //select[contains(@id,'pan_sourceofincome')]
+ApplicationPagePanIndia.xpath.clickOnResidence = //input[@id='residence' and @value='1']
+ApplicationPagePanIndia.xpath.clickOnOffice = //input[@name='pan_communication' and @value='2']
+ApplicationPagePanIndia.xpath.enterDateOfBirth = //input[@name='pan_dob']
+ApplicationPagePanIndia.xpath.enterHouseNumberOrBuildingNumber = //input[@name='pan_addressline1']
+ApplicationPagePanIndia.xpath.enterAreaOrRoadStreet = //input[@name='pan_addressline2']
+ApplicationPagePanIndia.xpath.enterCItyOrTownOrDistrict = //input[@name='pan_cityname']
+ApplicationPagePanIndia.xpath.selectStateOrUnionTeritory = //select[@id='pan_state']
+ApplicationPagePanIndia.xpath.selectCountry = //select[@name='pan_country']
+ApplicationPagePanIndia.xpath.enterPinCode = //input[@name='pan_pincode']
+ApplicationPagePanIndia.xpath.enterNameOfOffice = //input[@id='pan_officename']
+ApplicationPagePanIndia.xpath.enterHouseNumber = //input[@name='pan_officeaddressline1']
+ApplicationPagePanIndia.xpath.enterAreaStreet = //input[@name='pan_officeaddressline2']
+ApplicationPagePanIndia.xpath.enterCity = //input[@name='pan_officecityname']
+ApplicationPagePanIndia.xpath.selectOfficeState = //select[@name='pan_officestate']
+ApplicationPagePanIndia.xpath.enterPincode = //input[@name='pan_officepincode']
+ApplicationPagePanIndia.xpath.selectIdentityProof = //select[@name='pan_identityproof']
+ApplicationPagePanIndia.xpath.selectAddressProof = //select[@name='pan_addressproof']
+ApplicationPagePanIndia.xpath.selectDateOfBirthProof = //select[@name='pan_DOBproof']
+ApplicationPagePanIndia.xpath.selectDateOfBirthProof1 = //select[@name='pan_DOBproof'] 
+ApplicationPagePanIndia.xpath.selectAadarProof1 = //select[@id='pan_aadhaarproof']
+ApplicationPagePanIndia.xpath.selectOfficeAddressProof = //select[@name='pan_officeaddressproof']
+ApplicationPagePanIndia.xpath.clickOnAgree = //input[@name='pan_source[]']
+
+#######		TC004	phptravels RegistrationOfPhpTravels	
+						###########
+RegistrationOfPhpTravels.xpath.enterFirstName = //input[@name='firstname']
+RegistrationOfPhpTravels.xpath.enterLastName = //input[@name='lastname']
+RegistrationOfPhpTravels.xpath.enterEmailId = //input[@name='email']
+RegistrationOfPhpTravels.xpath.clickONNation = //div[@class='selected-dial-code']
+RegistrationOfPhpTravels.xpath.clickByNation = //span[starts-with(text(),'India')]
+RegistrationOfPhpTravels.xpath.enterPhoneNumber = //input[@id='inputPhone']
+RegistrationOfPhpTravels.xpath.enterCompanyName = //input[@name='companyname']
+RegistrationOfPhpTravels.xpath.enterStreetAddress = //input[@name='address1']
+RegistrationOfPhpTravels.xpath.enterStreetAddress1 = //input[@name='address2']
+RegistrationOfPhpTravels.xpath.entercity = //input[@name='city']
+RegistrationOfPhpTravels.xpath.enterState = //input[@name='state']
+RegistrationOfPhpTravels.xpath.selectState = //select[@name='state']
+RegistrationOfPhpTravels.xpath.enterPostCode = //input[@name='postcode']
+RegistrationOfPhpTravels.xpath.selectCountry = //select[starts-with(@name,'country')]
+RegistrationOfPhpTravels.xpath.selectHowDidYouFindUs = //select[starts-with(@name,'country')]/following::select
+RegistrationOfPhpTravels.xpath.enterMobileNumber = //input[@name='customfield[2]']
+RegistrationOfPhpTravels.xpath.enterPassword = //input[@name='password']
+RegistrationOfPhpTravels.xpath.enterConformPassword = //input[@name='password2']
+
+#########		 IRCTC  CovidAlertPage 		##############
+CovidAlertPage.xpath.clickOnOk = //button[@class='btn btn-primary']
+
+########  IRCTC HomePage 	#########
+HomePage.xpath.clickOnRegister = //a[text()=' REGISTER ']
+HomePage.xpath.mouseOverOnHolidays = //a[text()=' HOLIDAYS ']
+HomePage.xpath.clickHolidays = //a[text()=' HOLIDAYS ']
+HomePage.xpath.clickOnStays = //a[@aria-label ='Sub Menu of Holiday, Stays. Having sub menu']
+HomePage.xpath.mouseOverOnStays = //a[@aria-label ='Sub Menu of Holiday, Stays. Having sub menu']
+HomePage.xpath.clickOnLounge = (//span[text()='Lounge'])[1]
+
+####### 	IRCTC RegistrationPage (Basic details)	##########
+RegistrationPage.xpath.enterUserName = //input[@id='userName']
+RegistrationPage.xpath.enterPassword = //input[@id='usrPwd']
+RegistrationPage.xpath.enterConformPassword = //input[@id='cnfUsrPwd']
+RegistrationPage.xpath.clickOnLanguage = //div[starts-with(@class,'ng-tns-c66-14 ui-dropdown ui-widget ui-state-default ui-corner-all')]
+RegistrationPage.xpath.clickOnPreferredlanguage = //span[text()='"+language+"']
+RegistrationPage.xpath.clickOnEnglish = //span[text()='English']
+RegistrationPage.xpath.clickOnSequrityQuestion = //div[starts-with(@class,'ng-tns-c66-15 ')]
+RegistrationPage.xpath.clickOnSequrityQuestionNumber = (//span[@class='ng-star-inserted'])["+questionnumber+"]
+RegistrationPage.xpath.enterSequrityAnswer = (//input[@type='text'])[4]
+RegistrationPage.xpath.clickOnSubmit = (//button[@type='submit'])[2]
+RegistrationPage.xpath.clickOnPersonaldetails = //span[text()='Personal Details']
+
+######		IRCTC PersonalDetailsForReg		##############
+PersonalDetailsForReg.xpath.enterFirstName = //input[@id='firstName']
+PersonalDetailsForReg.xpath.enterSecondName = //input[@name='middleName']
+PersonalDetailsForReg.xpath.enterLastName = //input[@name='lastname']
+PersonalDetailsForReg.xpath.clickOnOccupation = //div[@class='ng-tns-c66-16 ui-dropdown ui-widget ui-state-default ui-corner-all']
+PersonalDetailsForReg.xpath.clickOnSpecificOccupation = (//span[@class='ng-star-inserted'])["+occupation+"]
+PersonalDetailsForReg.xpath.clickOnDateOfBirth = (//input[@type='text'])[9]
+PersonalDetailsForReg.xpath.enterDOB = (//input[@type='text'  and @autocomplete='off'])[1]
+PersonalDetailsForReg.xpath.selectYear = //select[@class='ui-datepicker-year ng-tns-c59-10 ng-star-inserted' and @tabindex='0']
+PersonalDetailsForReg.xpath.selectMonth = //select[@class='ui-datepicker-month ng-tns-c59-10 ng-star-inserted']
+PersonalDetailsForReg.xpath.clickOnDay = //a[text()='"+day+"']
+PersonalDetailsForReg.xpath.clickOnMatrialStatus = //label[text()='"+status+"']
+PersonalDetailsForReg.xpath.selectNation = //select[@formcontrolname='resCountry']
+PersonalDetailsForReg.xpath.clickOnGender = //span[text()='"+gender+"']
+PersonalDetailsForReg.xpath.enterEmail = //input[@name='email']
+PersonalDetailsForReg.xpath.enterMobile = (//input[@name='email']/following::input)[2]
+PersonalDetailsForReg.xpath.selectNationality = //select[starts-with(@formcontrolname,'nationality')]
+PersonalDetailsForReg.xpath.clickOnContinue = //button[starts-with(@class,'search_btn train_Search ng-star-inserted')]
+
+######	IRCTC AddressFieldReg	##############
+AddressFieldReg.xpath.enterFlatDoorNumber = //input[@name='resAddress1']
+AddressFieldReg.xpath.enterStreetLane = //input[@name='resAddress2']
+AddressFieldReg.xpath.enterAddressLocality = //input[@name='resAddress3']
+AddressFieldReg.xpath.enterPincode = //input[@name='resPinCode']
+AddressFieldReg.xpath.enterState = //input[@name='resState']
+AddressFieldReg.xpath.enterCity = //input[@id='resCity']
+AddressFieldReg.xpath.enterPostOffice = //input[@id='resPostOff']
+AddressFieldReg.xpath.selectCity = //select[@formcontrolname='resCity']
+AddressFieldReg.xpath.selectPostOffice = //select[@formcontrolname='resPostOff']
+AddressFieldReg.xpath.enterPhoneNumber = //input[@id='resPhone']
+AddressFieldReg.xpath.clickOnNo = (//div[@aria-checked='true' and @role='radio'])[2]
+AddressFieldReg.xpath.enterResidenceFlatDoorNumber = //input[@name='offAddress1']
+AddressFieldReg.xpath.enterResidenceStreetLane = //input[@name='offAddress2']
+AddressFieldReg.xpath.enterResidenceAddressLocality = //input[@name='offAddress3']
+AddressFieldReg.xpath.clickOnCountry = //span[text()='Select a Country']
+AddressFieldReg.xpath.clickOnSpecificCountry = //span[text()='"+nameofcountry+"']
+AddressFieldReg.xpath.enterResidencePincode = //input[@id='offPinCode']
+AddressFieldReg.xpath.enterResidenceOfficeState = //input[@id='offState']
+AddressFieldReg.xpath.enterResidencecity = (//input[@id='offPinCode']/following::input)[2]
+AddressFieldReg.xpath.selectCict = //select[@formcontrolname='offCity']
+AddressFieldReg.xpath.selectPostOffice1 = //select[@formcontrolname='offPostOff']
+AddressFieldReg.xpath.enterResidenceOfficePostoffice = //input[@id='offPostOff']
+AddressFieldReg.xpath.enterResidencePhoneNumber = //input[@name='offPhone']
+AddressFieldReg.xpath.clickOnTermsConditions = //input[@class='ng-untouched ng-pristine ng-valid']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

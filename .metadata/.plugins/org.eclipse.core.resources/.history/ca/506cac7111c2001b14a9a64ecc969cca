@@ -1,0 +1,22 @@
+package trail;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Trail {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		for(int i=1;i<=100;i--)
+		{
+			System.out.println(i);
+		}
+	}  
+		}
+		
+		
+		
+		
+	
