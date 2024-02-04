@@ -20,16 +20,16 @@ public class FacebookSignUp {
 
 		driver.get("http://www.facebook.com");
 		
-		driver.findElementByXPath("");
-		driver.findElement(By.xpath(""));
-		
-		driver.navigate().forward();
+//		driver.findElementByXPath("");
+//		driver.findElement(By.xpath(""));
+//		
+//		driver.navigate().forward();
 		
 		
 		
 		//driver.findElementByPartialLinkText("English (UK)").click();
 
-		driver.findElementByLinkText("Create New Account").click();
+		driver.findElementByLinkText("Create new account").click();
 
 		Thread.sleep(5000);
 

@@ -11,8 +11,8 @@ public class Factorial {
 		Scanner sc = new Scanner(System.in);
 		int i = sc.nextInt();
 		int fact=1;
-		//int x=4;
-		for(i=1;i<=100;i++) 	
+		int x=5;
+		for(i=1;i<=x;i++) 	
 				{
 					fact=fact*i;
 				
@@ -27,13 +27,13 @@ public class Factorial {
 	
 		 System.out.println("Enter the number to which you need to find the factorial");
 			Scanner sc11 = new Scanner(System.in);
-	      int j =1, b=1, a;
+	      int c =1, b=1, a;
 	      //Scanner sc11 = new Scanner(System.in);
 	      a = sc11.nextInt();
 	
-	      while(j <=a) {
-	         b = b * j;
-	         j++;
+	      while(c <=a) {
+	         b = b * c;
+	         c++;
 	      }
 	      System.out.println("Factorial of the given number is:: "+b);
 	}

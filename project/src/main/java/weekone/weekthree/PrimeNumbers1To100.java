@@ -8,14 +8,17 @@ public class PrimeNumbers1To100 {
 		
 	       String  primeNumbers ="";
 
-	       for (int i = 1; i <= 100; i++)         
+	       for (int i = 1; i <= 11; i++)         
 	       { 		  	  
-	          int counter=0; 	  
+	          int counter=0; 
+	          System.out.println("i value "+i);
 	          for(int j =2; j<i; j++)
 	          {
+	        	  System.out.println(i+" i&j "+j);
 	             if(i%j==0)
 		     {
-	 		counter = counter + 1;
+	            	 System.out.println(i+" i%%%j "+j);
+	            	 counter = counter + 1;
 		     }
 	          }
 	          if (counter ==0)

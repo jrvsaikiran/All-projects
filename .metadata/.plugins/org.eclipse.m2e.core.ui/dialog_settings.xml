@@ -44,6 +44,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\SAI KIRAN\OneDrive\Desktop\java files"/>
 			<item value="C:\Users\SAI KIRAN\OneDrive\Desktop\New folder\JavaDemo"/>
 			<item value="C:\Users\SAI KIRAN\OneDrive\Desktop\New folder\project\src\main\java\trail\DropdownOptions.java"/>
 			<item value="C:\Users\SAI KIRAN\OneDrive\Desktop\New folder\project\src\main\java\secondday\PhpTravelRegister.java"/>
@@ -60,17 +61,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="Selenium.MavenDemo"/>
-			<item value="Selenium.PageObjectModel"/>
-			<item value="Selenium.ProjectImplementation"/>
+			<item value="sample_cucumber.sample_cucumber"/>
 		</list>
 		<list key="groupId">
-			<item value=" Selenium"/>
+			<item value="sample-cucumber"/>
 		</list>
 		<list key="artifactId">
-			<item value="MavenDemo"/>
-			<item value="PageObjectModel"/>
-			<item value="ProjectImplementation"/>
+			<item value="sample-cucumber"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -83,5 +80,11 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.editor.dialogs.ManageDependenciesDialog">
+		<item value="859" key="width"/>
+		<item value="531" key="x"/>
+		<item value="106" key="y"/>
+		<item value="607" key="height"/>
 	</section>
 </section>

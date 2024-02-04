@@ -9,12 +9,15 @@ public class LeapYear {
 		int n;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the Year");
-		int year=sc.nextInt();
-		if(year%4==0)
+		//int year=sc.nextInt();
+		for (int i=1900;i<=2024;i++) {
+			
+		
+		if(i%4==0)
 		{
-			if(year%100==0)
+			if(i%100==0)
 			{
-				if(year%400==0)
+				if(i%400==0)
 				{
 					n=1;
 				}
@@ -29,6 +32,7 @@ public class LeapYear {
 			}
 			
 		}
+		
 		else
 		{
 			n=0;	
@@ -36,11 +40,13 @@ public class LeapYear {
 		
 		if(n==1)
 		{
-			System.out.println(year+" is Leap Year");
+			System.out.println(i+" is Leap Year");
 		}
+		
 		else
 		{
-			System.out.println(year+" is Not Leap year");
+			System.out.println(i+" is Not Leap year");
+		}
 		}
 		
 		

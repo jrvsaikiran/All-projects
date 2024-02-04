@@ -1,11 +1,14 @@
 package weekone;
 
+import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PhpTravelReg {
 
-	public static void main(String[] args) throws InterruptedException {
+	//public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
+		@Test()
+		public void php() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 
 		ChromeDriver driver = new ChromeDriver();
@@ -50,7 +53,7 @@ public class PhpTravelReg {
 
 		driver.findElementByXPath("//*[@id=\"inputNewPassword2\"]").sendKeys("Ss@8985891589");
 
-		driver.findElementByXPath("//*[@id=\"frmCheckout\"]/div[3]/div/div/span[1]").click();
+		//driver.findElementByXPath("//*[@id=\"frmCheckout\"]/div[3]/div/div/span[1]").click();
 
 		// driver.findElementByXPath("//*[@id=\"recaptcha-anchor\"]/div[1]").click();
 

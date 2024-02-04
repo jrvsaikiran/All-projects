@@ -1,6 +1,7 @@
 package weeksix;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -10,21 +11,30 @@ public class A1 {
 	
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter word");
-		String str = sc.next();
-		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+//		String str = sc.next();
+		String str = "google";
+		LinkedHashMap<Character, Integer> map = new LinkedHashMap<Character, Integer>();
 		char [] charArray = str.toCharArray();
+		System.out.println(charArray);
 		for(char ch:charArray)
 		{
 			if(map.containsKey(ch))
 			{
+//				System.out.println(ch+" ch");
+//				System.out.println(map+" map1");
 				map.put(ch, map.get(ch)+1);
+//				System.out.println(map+" map2");
 			}
 			else
 			{
+//				System.out.println(map+" map3");
 				map.put(ch, 1);
+//				System.out.println(map+" map4");
 			}
 			
 		}
+		System.out.println(map);
+		
 		for(Map.Entry<Character, Integer> entry:map.entrySet())
 		{
 			if(entry.getValue()>1)

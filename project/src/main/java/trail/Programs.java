@@ -210,7 +210,7 @@ public class Programs {
 		System.out.println(highest);
 		
 		
-		Select sc = new Select(driver);
+		//Select sc = new Select(driver);
 		
 		
 		

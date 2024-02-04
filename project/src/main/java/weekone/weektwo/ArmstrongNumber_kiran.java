@@ -29,21 +29,26 @@ public class ArmstrongNumber_kiran {
 		}*/
 	
 	
-	int i=1,a,arm,n;
+	int i=153,rem,arm,n;
 	System.out.println("Armstrong numbers between 1 to 500 are");
-	while(i<500)
+//	while(i<154)
+	for(i=1;i<=500;i++)
 	{
 	n=i;
+//	System.out.println("n value= "+n);
 	arm=0;
 	while(n>0)
 	{
-		a=n%10;
-		arm=arm+(a*a*a);
+		rem=n%10;
+//		System.out.println("rem= "+rem);
+		arm=arm+(rem*rem*rem);
+//		System.out.println("arm= "+arm);
 		n=n/10;
+//		System.out.println("n= "+n);
 	}
 	if(arm==i)
-		System.out.println(i);
-	i++;
+	System.out.println("i yes= "+i);
+//	i++;
 	}
 		
 	

@@ -12,9 +12,11 @@ public class PrintSumOfEnteredNumbers {
 			System.out.println("Enter the Number");
 			Scanner sc=new Scanner(System.in);
 			n=sc.nextInt();
+			System.out.println(" entered numbers:"+n);
 			sum=sum+n;
 		}
-		while(n>0);
+		while(n>=0);
+		System.out.println(" entered :"+n);
 		System.out.println("Sum of the all entered numbers:"+sum);
 
 	}

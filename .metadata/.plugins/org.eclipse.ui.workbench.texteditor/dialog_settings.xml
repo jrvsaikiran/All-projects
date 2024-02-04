@@ -6,17 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="RegistrationPage.xpath.clickOnSequrityQuestionNumber" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="RegistrationPage.xpath.clickOnSequrityQuestionNumber"/>
-			<item value="takesnap"/>
-			<item value="xpath"/>
-			<item value="id"/>
-			<item value="clickby"/>
+			<item value="list"/>
+			<item value="text"/>
+			<item value="pre"/>
+			<item value="set"/>
+			<item value="takeSnap"/>
+			<item value="selenium"/>
+			<item value="wind"/>
+			<item value="findElement"/>
 		</list>
 		<list key="replacehistory">
 		</list>

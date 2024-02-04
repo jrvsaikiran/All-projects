@@ -11,11 +11,11 @@ public class A2 {
 	public static void main(String[] args) {
 		
 		
-		String str = "programming";
+		String str = "google";
 		StringBuilder sb = new StringBuilder();
 		
 		Set<Character> set = new HashSet<>();
-		for (int i=0 ; i<str.length(); i--) {
+		for (int i=0 ; i<str.length(); i++) {
 			set.add(str.charAt(i));
 			
 		}
@@ -39,7 +39,8 @@ public class A2 {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter word");
-		String str1 = sc.next();
+//		String str1 = sc.next();
+		String str1 ="google";
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 		char [] charArray = str1.toCharArray();
 		for(char ch:charArray)

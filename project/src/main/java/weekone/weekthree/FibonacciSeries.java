@@ -8,25 +8,29 @@ public class FibonacciSeries {
 		// TODO Auto-generated method stub
 
  int a = 0, b = 1;
-		 
-		 System.out.println("Enter number of terms :");
+//		 
+//		 System.out.println("Enter number of terms :");
 		 	
 		 Scanner sc = new Scanner(System.in);
 		 	
-		 	 int n = sc.nextInt();
-		 	 
-		    System.out.println("Fibonacci Series till " + n + " terms:");
+//		 	 int n = sc.nextInt();
+//		 	 
+//		    System.out.println("Fibonacci Series till " + n + " terms:");
 
-		    for (int i = 1; i <= n; ++i) {
+		    for (int i = 0; i <= 7; i++) {
+		    	 
+//				 System.out.println("Enter number of terms :"+i);
 		    	
 		    	 int c = a + b;
-		    	 // b = c;
+//		    	  b = c;
+		    	 System.out.print(a+" ");
 		    	 a = b;
 			     b = c;
 		    	
-		      System.out.print(a+",");
+		      
 		      
 		    }
+//		    System.out.print(a+",");
 	}
 
 }

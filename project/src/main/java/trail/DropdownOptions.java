@@ -106,7 +106,7 @@ public class DropdownOptions{
 	   
 	   Map<Character, Integer> map3 = new HashMap<>();
 	   
-	   map3.put(c, 1);
+	  // map3.put(c, 1);
 	   
 	  // System.out.println(map3);
 	   
