@@ -1,0 +1,227 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-03-23T12:49:22.770Z",
+        "line": 3,
+        "name": "Successfull login",
+        "description": "",
+        "id": "login;successfull-login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3081000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user launches chrome browser",
+            "match": {
+              "location": "stepdefinition.Steps.user_launches_chrome_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1997000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user opens url",
+            "match": {
+              "location": "stepdefinition.Steps.user_opens_url()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 396000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters email and password",
+            "match": {
+              "location": "stepdefinition.Steps.user_enters_email_as_and_password_as()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8033000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on login",
+            "match": {
+              "location": "stepdefinition.Steps.user_clicks_on_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 66000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "page title should be",
+            "match": {
+              "location": "stepdefinition.Steps.page_title_should_be()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2199000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user clicks on logout",
+            "match": {
+              "location": "stepdefinition.Steps.user_clicks_on_logout()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 159000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "page title should be",
+            "match": {
+              "location": "stepdefinition.Steps.page_title_should_be()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 643000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "close browser.",
+            "match": {
+              "location": "stepdefinition.Steps.close_browser()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-03-23T12:49:39.498Z",
+        "line": 14,
+        "name": "Successfull login......",
+        "description": "",
+        "id": "login;successfull-login......",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1541000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user launches chrome browser",
+            "match": {
+              "location": "stepdefinition.Steps.user_launches_chrome_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1297000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user opens url",
+            "match": {
+              "location": "stepdefinition.Steps.user_opens_url()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 384000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user enters email and password",
+            "match": {
+              "location": "stepdefinition.Steps.user_enters_email_as_and_password_as()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5053000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user clicks on login",
+            "match": {
+              "location": "stepdefinition.Steps.user_clicks_on_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 55000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "page title should be",
+            "match": {
+              "location": "stepdefinition.Steps.page_title_should_be()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1795000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user clicks on logout",
+            "match": {
+              "location": "stepdefinition.Steps.user_clicks_on_logout()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 155000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "page title should be",
+            "match": {
+              "location": "stepdefinition.Steps.page_title_should_be()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 682000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "close browser.",
+            "match": {
+              "location": "stepdefinition.Steps.close_browser()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/Features/Login.feature",
+    "tags": []
+  }
+]
