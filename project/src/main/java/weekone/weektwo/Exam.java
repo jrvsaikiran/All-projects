@@ -1,7 +1,7 @@
 package weekone.weektwo;
 
 
-import com.sun.org.slf4j.internal.LoggerFactory;
+//import com.sun.org.slf4j.internal.LoggerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -49,7 +49,7 @@ public class DataProviderExam {
 		System.out.println(testdata);
 		return testdata;
 	}
-
+	public static Map<Object,Object> map;
     @DataProvider(name="testdataMap")
     public static Object[][] testData(Method m) throws IOException {
         String sheetname = m.getName();
@@ -60,15 +60,15 @@ public class DataProviderExam {
             int lastCellNum = sheet.getRow(0).getLastCellNum();
             System.out.println("Row Count "+lastRowNum);
             System.out.println("Column Count "+lastCellNum);
-			Object[][] obj = new Object[lastRowNum][lastCellNum];
+			Object[][] obj = new Object[lastRowNum][1];
             DataFormatter formate = new DataFormatter();
 		List<Map<Object, Object>> list = new ArrayList<>();
-		Map<Object,Object> map;
+
             for(int i=0;i<lastRowNum;i++) {
 				map = new LinkedHashMap<>();
                 for(int j=0;j<lastCellNum;j++) {
 					map.put(formate.formatCellValue(sheet.getRow(0).getCell(j)),formate.formatCellValue(sheet.getRow(i+1).getCell(j)));
-					obj[i][0]=map;
+					obj[i][1]=map;
                 }
 				list.add(map);
 			}
