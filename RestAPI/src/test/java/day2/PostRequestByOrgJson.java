@@ -72,6 +72,7 @@ public class PostRequestByOrgJson {
 		.then()
 			.statusCode(201)
 			.body("email", equalTo("kiran@gmail.com"))
+				.body("email",equalTo(data.getEmail()))
 			.body("first_name",equalTo("jrv"))
 			.body("last_name", equalTo("kiran"))
 			.body("avatar", equalTo("https://reqres.in/img/faces/7-image.jpg"))
