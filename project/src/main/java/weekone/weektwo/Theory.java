@@ -6,10 +6,9 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Method;
+import java.sql.*;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
@@ -18,13 +17,13 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -50,12 +49,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
 
@@ -275,32 +269,7 @@ public class Theory {
 		driver.switchTo().frame(""); // by string
 		driver.switchTo().frame(element); // by webelement
 		driver.switchTo().defaultContent(); // back to main frame
-		// ==================================================
-		// Excel reading
 
-		try {
-			FileInputStream fis = new FileInputStream("");
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheet("sheetname");
-			int rowCount = sheet.getLastRowNum();
-			int columnCount = sheet.getRow(rowCount).getLastCellNum();
-			System.out.println("Row Count " + rowCount);
-			System.out.println("Column Count " + columnCount);
-			String[][] testData = null;
-			for (int i = 1; i <= rowCount; i++) {
-				XSSFRow row = sheet.getRow(i);
-				for (int j = 0; j < columnCount; j++) {
-					String cellData = row.getCell(j).getStringCellValue();
-					System.out.println("The value of row " + (i - 1) + " and column " + j + " is : " + cellData);
-					testData[i - 1][j] = cellData;
-				}
-			}
-
-		} catch (FileNotFoundException e) {
-
-		} catch (IOException e) {
-
-		}
 		// ==========================================================
 		// screenshot take snap
 		int snapNumber = 0;
@@ -457,14 +426,112 @@ public class Theory {
 		chromeOptions.addArguments("window-size=1200,800");
 		chromeOptions.addArguments("force-device-scale-factor=0.85"); 
 		chromeOptions.addArguments("high-dpi-support=0.85");
-		
-		
-		
-		
-		
-		
-		
-		
+
+//	=============================================================================
+// xml suite
+
+	/*<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+		<suite name="SeleniumSuite">
+    		<test name="SeleniumTest">
+      		  <classes>
+           		 <class name="your.package.YourTestClass1" />
+          		 <class name="your.package.YourTestClass2" />
+           		 <!-- Add more test classes as needed -->
+      		  </classes>
+   		 	</test>
+    		<!-- Add more <test> elements for additional test configurations if necessary-->
+		</suite>
+*/
+
+
+
+
+
+//==========================================================================================
+	}
+	public static void dbConnectionSettings() {
+		// Database connection parameters
+		String url = "jdbc:mysql://localhost:3306/your_database";
+		String username = "your_username";
+		String password = "your_password";
+
+		// Establishing the connection
+		try (Connection connection = DriverManager.getConnection(url, username, password)) {
+			// Creating a statement
+			Statement statement = connection.createStatement();
+
+			// Example query
+			String query = "SELECT * FROM your_table";
+			ResultSet resultSet = statement.executeQuery(query);
+
+			// Process the result set
+			while (resultSet.next()) {
+				// Retrieve data from the result set
+				String column1 = resultSet.getString("column_name1");
+				String column2 = resultSet.getString("column_name2");
+
+				// Process the data as needed
+				System.out.println("Column1: " + column1 + ", Column2: " + column2);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+//=================================================================================
+	@DataProvider(name="testdata")
+	public static Object[][] pub(Method m) {
+		String[][] testdata = new String[0][];
+		String sheetname = m.getName();
+		try {
+			FileInputStream fis = new FileInputStream("./testData/TestData.xlsx");
+			XSSFWorkbook wb = new XSSFWorkbook(fis);
+			XSSFSheet sheet = wb.getSheet(sheetname);
+			int lastRowNum = sheet.getLastRowNum();
+			int lastCellNum = sheet.getRow(0).getLastCellNum();
+			System.out.println("Row Count "+lastRowNum);
+			System.out.println("Column Count "+lastCellNum);
+
+			testdata = new String[lastRowNum][lastCellNum];
+			DataFormatter formate = new DataFormatter();
+			for(int i=1;i<=lastRowNum;i++) {
+				for(int j=0;j<lastCellNum;j++) {
+					testdata[i-1][j] = formate.formatCellValue(sheet.getRow(i).getCell(j));
+					System.out.println("The value of row "+(i-1)+" and column "+j+" is : "+testdata[i-1][j]);
+				}
+			}
+		} catch (FileNotFoundException e) {
+
+		} catch (IOException e) {
+
+		}
+		System.out.println(testdata);
+		return testdata;
 	}
 
+	@Test(enabled=false,dataProvider="testdata",dataProviderClass= Theory.class)
+	public void facebook(String username,String password) throws Exception {
+
+	}
+//===========================================================================
+
+	public static void writeToExcelSheet() {
+		try (Workbook workbook = new XSSFWorkbook()) {
+			Sheet sheet = workbook.createSheet("Sheet1");
+
+			// Creating a row and cells
+			Row headerRow = sheet.createRow(0);
+			Cell headerCell = headerRow.createCell(0);
+			headerCell.setCellValue("Hello");
+
+			// Writing to the Excel file
+			try (FileOutputStream fileOut = new FileOutputStream("example.xlsx")) {
+				workbook.write(fileOut);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+ }
+}
+
+//===============================================================
 }
