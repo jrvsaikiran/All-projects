@@ -20,7 +20,7 @@ import org.testng.annotations.DataProvider;
 public class DataProviderExam {
 
 	@DataProvider(name="testdata")
-	public static Object[][] pub(Method m) {
+	public static Object[][] pub(Method m) throws Exception {
 		String[][] testdata = new String[0][];
 		String sheetname = m.getName();
 		try {
@@ -42,8 +42,12 @@ public class DataProviderExam {
 				}
 			}
 		} catch (FileNotFoundException e) {
+			throw new Exception("");
 
 		} catch (IOException e) {
+
+		}
+		catch (Throwable e) {
 
 		}
 		System.out.println(testdata);

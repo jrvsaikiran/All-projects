@@ -534,4 +534,31 @@ public class Theory {
 }
 
 //===============================================================
+
+	public static void getActiveLinksFromWebPage(){
+		// Set the path to the ChromeDriver executable (make sure it's installed)
+		System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+		// Initialize ChromeDriver
+		WebDriver driver = new ChromeDriver();
+
+		// Open the webpage containing the links you want to check
+		driver.get("https://example.com");
+
+		// Get all links on the page
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// Check each link for its status code
+		for (WebElement link : links) {
+			String href = link.getAttribute("href");
+			driver.navigate().to(href);
+			int statusCode = Integer.parseInt(js.executeScript("return window.performance.getEntries()[0].response.status").toString());
+			System.out.println("Link: " + href + ", Status Code: " + statusCode);
+		}
+
+		// Close the WebDriver
+		driver.quit();
+	}
+
+
 }
