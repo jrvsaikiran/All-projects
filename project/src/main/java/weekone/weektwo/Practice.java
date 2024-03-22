@@ -263,9 +263,10 @@ public class Practice {
 		String sy = new String(charArray2);
 		System.out.println(sy);
 //		=========================================
-		
-		
-		
-		
+
+
+
+
 	}
+
 }
