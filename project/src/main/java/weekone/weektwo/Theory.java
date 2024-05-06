@@ -15,12 +15,16 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
 
+import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.simple.JSONObject;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -84,7 +88,7 @@ public class Theory {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 
 		// fluentw wait
-		FluentWait<WebDriver> flue = new FluentWait<WebDriver>(driver);
+		FluentWait<WebDriver> flue = new FluentWait<>(driver);
 		flue.withTimeout(Duration.ofMillis(9000));
 		flue.pollingEvery(Duration.ofMillis(1000));
 		flue.ignoring(NoSuchElementException.class);
@@ -156,6 +160,7 @@ public class Theory {
 		ac.contextClick(element); // right click
 		ac.moveToElement(element).moveToElement(element).click().build().perform(); // naga
 		ac.doubleClick(element).build().perform(); // naga
+		ac.dragAndDrop(element,element).build().perform();
 		// ==================================
 		// javascript executor
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -431,7 +436,7 @@ public class Theory {
 // xml suite
 
 	/*<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-		<suite name="SeleniumSuite">
+		<suite name="SeleniumSuite"> parallel="test" thread-count="3"
     		<test name="SeleniumTest">
       		  <classes>
            		 <class name="your.package.YourTestClass1" />
@@ -442,10 +447,6 @@ public class Theory {
     		<!-- Add more <test> elements for additional test configurations if necessary-->
 		</suite>
 */
-
-
-
-
 
 //==========================================================================================
 	}
@@ -558,6 +559,36 @@ public class Theory {
 
 		// Close the WebDriver
 		driver.quit();
+	}
+
+	public void restAssuredExample(){
+		Faker fake = new Faker();
+
+		JSONObject data = new JSONObject();
+		data.put("name", fake.name().firstName().toUpperCase());
+		data.put("gender", "Male");
+		data.put("email", fake.internet().emailAddress());
+		data.put("status", "inactive");
+
+		String bearerToken = "6da4f2651f73b9f4296247f4a9dc8fbb926878c19212d6af2c69edbce5e692f7";
+
+		given()
+				.header("Authorization", "Bearer " + bearerToken)
+				.contentType("application/json")
+				.body(data.toString())
+
+				.when()
+				.post("https://gorest.co.in/public/v2/users")
+
+				.then()
+				.statusCode(201)
+				.body("email", equalTo("sai@gmail.com"))
+				.body("first_name", equalTo("jrv"))
+				.body("last_name", equalTo("kiran"))
+				.body("avatar", equalTo("https://reqres.in/img/faces/7-image.jpg"))
+				.body("courses[0]", equalTo("c"))
+				.log().all();
+
 	}
 
 

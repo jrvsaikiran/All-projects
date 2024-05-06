@@ -1,12 +1,7 @@
 package weekone.weektwo;
 
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -45,8 +40,26 @@ public class Practice {
 			r=r+(s.charAt(i));
 		}
 		System.out.println(s+" palindrom "+r);
-		
+
+//		(0r)
+		StringBuffer strBuf = new StringBuffer("jrv sai ");
+		String s2 = strBuf.reverse().toString();
+		System.out.println(s2); // ias vrj
+
+		// reverse the sentence
+		String revWd = "sai is good boy";
+		String reverse = "";
+		String[] s3 = revWd.split(" ");
+		for( int xy=s3.length-1;xy>=0;xy--){
+			reverse = reverse + s3[xy] + " ";
+		}
+		System.out.println("reverse of word ===" + reverse); //output reverse of word ===boy good is sai
+
 //		====================
+		//substring
+
+		System.out.println(s2.substring(2,4));
+//		===============
 		
 		String k = "Automation";
 		
@@ -142,7 +155,7 @@ public class Practice {
 			else
 				map.put(ch, 1);
 		}
-		System.out.println(map);
+		System.out.println(map); //{g=2, o=2, l=1, e=1}
 		
 		for(Map.Entry<Character, Integer> entry: map.entrySet()) {
 		if(entry.getValue()>1) {
@@ -162,7 +175,7 @@ public class Practice {
 			else
 				lmap.put(word, 1);
 		} 
-		System.out.println(lmap);
+		System.out.println(lmap); //{sai=2, kiran=2, saisai=1}
 		for(Entry<String, Integer> ent :lmap.entrySet()) {
 			if(ent.getValue()>1)
 				System.out.println(ent.getKey());
@@ -263,10 +276,95 @@ public class Practice {
 		String sy = new String(charArray2);
 		System.out.println(sy);
 //		=========================================
+		//occurance of individual character
+		String str = "jrv is good boy";
+		System.out.println(String.valueOf(str.length()));
+		int rep = str.length() - str.replaceAll("o", "").length();
+		System.out.println(String.valueOf(rep));
+//======================================================
+		//Anagram
+		String x = new String("sai");
+		String y = new String("is");
+		char[] charsX = x.toLowerCase().toCharArray();
+		char[] charsY = y.toLowerCase().toCharArray();
+		Arrays.sort(charsX);
+		Arrays.sort(charsY);
+		if(Arrays.equals(charsX,charsY)){
+			System.out.println("strings are anagram");
+		}else{
+			System.out.println("not anagram");
+		}
 
+//================================
+		// recurssion in string palnindrom
+		boolean rec1 = isPalindrom("booob");
+		System.out.println(rec1);
 
+//		=====================
+		// reverse worde at same position
+		String str1 = "jrv sai kiran";
+		String[] s4 = str1.split(" ");
+		String empty = "";
+		for(String s5:s4){
+			char[] chars = s5.toCharArray();
+			for(int f=s5.length()-1;f>=0;f--){
+				empty = empty + chars[f];
+			}empty =empty+" ";
+		}System.out.println(empty+" "); //vrj ias narik
+//=====================================================
+		//find duplicates in array
+		int arry[] = {2,4,1,2,4,5};
+		for(int e=0;e<arry.length;e++){
+			for(int t=e+1;t<arry.length;t++){
+				if(arry[e]==arry[t]){
+					System.out.println("duplicates of array are "+arry[e]);
+				}
+			}
+		}
+//		========================================================
+		//find duplicates in array using hashset
+		int arry1[] = {2,4,1,2,4,5};
+		Set<Integer> set1 = new HashSet<>();
+		for(int in:arry1){
+			if(!set1.add(in)){
+				System.out.println("duplicates of array are by set "+in);
+			}
+		}
+//		==================================================================
+		//remove dupiclate words by set
+		String wd = "sai sai jrv";
+		String[] s5 = wd.split(" ");
+		Set<String> set3 = new LinkedHashSet<>();
+		for(String s6 : s5){
+			set3.add(s6);
+		}
+		Iterator<String> iterator = set3.iterator();
+		while (iterator.hasNext()){
+			String next = iterator.next();
+			System.out.print(" removed duplicate words "+next+" ");
+		}
 
 
 	}
 
+
+//==========end==============
+
+
+	public static boolean isPalindrom(String rec){
+		if(rec==null){
+			return false;
+		}
+		if(rec.length()<=1){
+			return true;
+		}
+		String first = rec.substring(0,1);
+		String last = rec.substring(rec.length()-1);
+		if(first.equals(last)){
+			return isPalindrom(rec.substring(1,rec.length()-1));
+		}else{
+			return false;
+		}
+
+	}
 }
