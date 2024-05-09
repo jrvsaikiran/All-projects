@@ -81,9 +81,31 @@ public class Practice2 {
             }
         }
         System.out.println("most frequent element "+key);
+//      =============================================
+        //remove duplicates in array
+        int aray7[] = {3,3,4,5,5,6};
+        Set<Integer> set = new HashSet<>();
+        for(int a7:aray7){
+            if(!set.add(a7)){
+                System.out.println("find duplicates in array "+a7);
+            }
+        }
+//        ==================================
+        //find ovels in string
+        String str= "triangle";
+        String ovels = "aeiouAEIOU";
+        StringBuilder sb = new StringBuilder();
+        char[] chars = str.toCharArray();
+        for(char c : chars){
+            if(ovels.indexOf(c)>=0){
+                sb.append(c);
+            }
+        }
+        System.out.println(sb);
+        System.out.println(sb.reverse());
 
 
-//===========================================
+//=====================end======================
     }
 
 

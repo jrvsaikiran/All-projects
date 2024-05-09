@@ -321,15 +321,7 @@ public class Practice {
 				}
 			}
 		}
-//		========================================================
-		//find duplicates in array using hashset
-		int arry1[] = {2,4,1,2,4,5};
-		Set<Integer> set1 = new HashSet<>();
-		for(int in:arry1){
-			if(!set1.add(in)){
-				System.out.println("duplicates of array are by set "+in);
-			}
-		}
+
 //		==================================================================
 		//remove dupiclate words by set
 		String wd = "sai sai jrv";
