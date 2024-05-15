@@ -2,6 +2,8 @@ package day8;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
 import io.restassured.matcher.RestAssuredMatchers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
@@ -121,6 +123,31 @@ public class PractiseApi {
             String studentName = jo.getJSONArray("student").getJSONObject(i).get("name").toString();
             System.out.println(studentName);
         }
+    }
+
+    @Test
+    public void postByJsonObject(){
+        JSONObject jsOb = new JSONObject();
+        jsOb.put("name","sai");
+        jsOb.put("id","45");
+
+       Response resp =  given()
+                .contentType("appliaction/json")
+                .body(jsOb.toString())
+                .when()
+                .post("http://");
+
+       //headers
+        Headers headers = resp.getHeaders();
+        for (Header hed:headers ) {
+            System.out.println(hed);
+        }
+
+        //cookies
+        Map<String, String> cookies = resp.getCookies();
+       for(Map.Entry<String,String> cok : cookies.entrySet()){
+           System.out.println(cok.getKey()+"======="+cok.getValue());
+       }
     }
 
 
