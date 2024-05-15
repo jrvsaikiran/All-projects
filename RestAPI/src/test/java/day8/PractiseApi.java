@@ -2,8 +2,11 @@ package day8;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.matcher.RestAssuredMatchers;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import lombok.Data;
+import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -56,6 +59,9 @@ public class PractiseApi {
         String token = "gdy683jyd6hye8";
         given()
                 .header("Authorization","Bearer"+token )
+//                .auth().basic("username","password")
+//                .auth().digest("","")
+//                .auth().oauth("","","")
                 .contentType("application/json")
                 .pathParam("mypath","id")
                 .queryParam("state","AP")
@@ -66,13 +72,19 @@ public class PractiseApi {
                 .statusCode(200)
                 .body("id.application[2]",equalTo("sai"))
                 .body("header",equalTo("application/json"))
+                .body("authenticated", equalTo(true))
                 .cookie("AEC",equalTo("ARblvhaFy8WIhFQ"))
                 .log().body()
                 .log().headers()
                 .log().cookies()
                 .log().everything()
                 .log().ifStatusCodeIsEqualTo(200)
-                .log().all();
+                .log().all()
+
+                //JsonSchemaValidator - validate data types like string,int,boolan
+                .assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("jsonschemavalidation.json"))
+                //xmlSchemaValidator
+                .assertThat().body(RestAssuredMatchers.matchesXsdInClasspath("xmlvalidator.xsd"));
      }
 
 
@@ -91,15 +103,24 @@ public class PractiseApi {
                 .when()
                 .post("");
 
-          //validations
+          //validations by testng-asserts
         Assert.assertEquals(res.getStatusCode(),"200");
         Assert.assertEquals(res.body().jsonPath().getInt("id"),"sai");
         Assert.assertEquals(res.header("Content-Type"),"application/json; charset=utf-8");
         Assert.assertEquals(res.jsonPath().get("id.app[2].email").toString(),"sai@gmail,com");
 
+        //validation in arrays
+        JSONObject jo = new JSONObject(res.toString());
+
+        //type1
+        String schoolname = jo.getJSONArray("schools").getJSONObject(2).get("name").toString();
+
+        //type2-iteration array
+        for(int i=0 ; i<jo.getJSONArray("student").length(); i++){
+            String studentName = jo.getJSONArray("student").getJSONObject(i).get("name").toString();
+            System.out.println(studentName);
+        }
     }
-
-
 
 
 }
