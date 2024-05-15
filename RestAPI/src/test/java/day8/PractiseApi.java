@@ -71,19 +71,20 @@ public class PractiseApi {
         .then()
                 .statusCode(200)
                 .body("id.application[2]",equalTo("sai"))
-                .body("header",equalTo("application/json"))
-                .body("authenticated", equalTo(true))
+                .header("Content-Type",equalTo("Content-Type;charset=utf-8"))
+                .body("authenticated", equalTo(true))   //to check autentication
                 .cookie("AEC",equalTo("ARblvhaFy8WIhFQ"))
                 .log().body()
                 .log().headers()
                 .log().cookies()
                 .log().everything()
+                .log().status()
                 .log().ifStatusCodeIsEqualTo(200)
                 .log().all()
 
                 //JsonSchemaValidator - validate data types like string,int,boolan
                 .assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("jsonschemavalidation.json"))
-                //xmlSchemaValidator
+                //xmlSchemaValidator- validate data types like string,int,boolan
                 .assertThat().body(RestAssuredMatchers.matchesXsdInClasspath("xmlvalidator.xsd"));
      }
 
