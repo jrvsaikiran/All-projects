@@ -20,7 +20,7 @@ public class ParsingJSONResponseData {
 	void testJsonResponse() {
 		
 		given()
-			.contentType("ContentType.Json")
+			.contentType("ContentType/Json")
 		
 		.when()
 			.get("http://localhost:3000/Students")
@@ -36,7 +36,7 @@ public class ParsingJSONResponseData {
 		void testJsonResponse2() {
 			
 		Response res =	given()
-				.contentType("ContentType.Json")
+				.contentType("ContentType/Json")
 			
 			.when()
 				.get("http://localhost:3000/Students");
@@ -63,12 +63,9 @@ public class ParsingJSONResponseData {
 
 		
 		JSONObject js = new JSONObject(resp.asString());	//converting responce to json object type
-		
-		JSONArray arr = new JSONArray();
-		
-				
-		
-		for(int i=0; i<js.getJSONArray("Students").length();i++)
+
+
+			for(int i=0; i<js.getJSONArray("Students").length();i++)
 		{
 			
 			 String id = js.getJSONArray("Students").getJSONObject(i).get("id").toString();
