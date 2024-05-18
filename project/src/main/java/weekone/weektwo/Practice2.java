@@ -103,7 +103,17 @@ public class Practice2 {
         }
         System.out.println(sb);
         System.out.println(sb.reverse());
+//===============================
+        //scond highest value in a map
+        Map<String,Integer> mp = new HashMap<>();
+        mp.put("sai",19);
+        mp.put("kiran",5);
+        mp.put("jrv",18);
 
+        TreeSet<Integer> sort = new TreeSet<>(mp.values()); //tree set automatically sort values
+        sort.pollLast(); // Retrieves and removes the last (highest) element, or returns null if this set is empty.
+        Integer last = sort.last();
+        System.out.println(last);
 
 //=====================end======================
     }
