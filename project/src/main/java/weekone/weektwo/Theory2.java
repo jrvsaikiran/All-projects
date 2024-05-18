@@ -29,8 +29,6 @@ public class Theory2 {
         option.click();
     }
 
-
-
 //    ====================end===========================
 
     //calling RetryAnalyzer class to test level
@@ -67,7 +65,7 @@ public class Theory2 {
         }
     }
 
-    public void runFaildTCbdd(){
+    public void runFaildTestCaseBdd(){
         @RunWith(Cucumber.class)
         @CucumberOptions(
                 features = "@target/rerun.txt", //running fail cases which are in .txt file
