@@ -2,7 +2,7 @@ package weekone.weektwo;
 
 import java.util.*;
 
-public class Practice2 {
+public class Programs2 {
     public static void main(String arg[]){
 
         Integer[] aray1 = {3,9,5,7,2,2};
