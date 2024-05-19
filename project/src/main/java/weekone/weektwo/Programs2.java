@@ -104,16 +104,28 @@ public class Programs2 {
         System.out.println(sb);
         System.out.println(sb.reverse());
 //===============================
-        //scond highest value in a map
+        //scond highest value in a map by using collections
         Map<String,Integer> mp = new HashMap<>();
         mp.put("sai",19);
         mp.put("kiran",5);
         mp.put("jrv",18);
 
-        TreeSet<Integer> sort = new TreeSet<>(mp.values()); //tree set automatically sort values
+        List<Integer> list=  new ArrayList<>(mp.values());
+        System.out.println(list);
+        Collections.sort(list);
+        Integer integer = list.get(mp.size() - 2);
+        System.out.println("======"+integer);
+
+        //scond highest value in a map by using TREESET
+        Map<String,Integer> mp1 = new HashMap<>();
+        mp1.put("sai",19);
+        mp1.put("kiran",5);
+        mp1.put("jrv",18);
+
+        TreeSet<Integer> sort = new TreeSet<>(mp1.values()); //tree set automatically sort values
         sort.pollLast(); // Retrieves and removes the last (highest) element, or returns null if this set is empty.
         Integer last = sort.last();
-        System.out.println(last);
+        System.out.println("------"+last);
 
 //=====================end======================
     }
