@@ -126,8 +126,31 @@ public class Programs2 {
         sort.pollLast(); // Retrieves and removes the last (highest) element, or returns null if this set is empty.
         Integer last = sort.last();
         System.out.println("------"+last);
+//===========================================
 
+        //tomorrow==t$m$$rr$$$w
+        String s = replaceCharFrequently("tomorrow", 'o', '$');
+        System.out.println(s);
 //=====================end======================
+    }
+
+    public static String replaceCharFrequently(String s, char c, char replacement) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        StringBuilder sb = new StringBuilder();
+        int countSofar = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch != c) {
+                sb.append(ch);
+            } else {
+                countSofar = countSofar + 1;
+                for (int i = 0; i < countSofar; i++) {
+                    sb.append(replacement);
+                }
+            }
+        }
+        return sb.toString();
     }
 
 
