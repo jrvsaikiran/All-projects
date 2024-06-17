@@ -128,6 +128,19 @@ public class Programs2 {
         System.out.println("------"+last);
 //===========================================
 
+        String st = "ab1ty4u8"; //output=1+4+8=13
+        int sum = 0;
+        char[] c = st.toCharArray();
+        for(char ch : c ){
+            if(Character.isDigit(ch)){
+                // Converting the character to it's integer value
+                int a = Integer.parseInt(String.valueOf(ch));
+//                int a = Character.getNumericValue(ch);
+                 sum = sum + a;
+                System.out.println("total sum "+sum);
+            }
+        }
+//  ===================================================
         //tomorrow==t$m$$rr$$$w
         String s = replaceCharFrequently("tomorrow", 'o', '$');
         System.out.println(s);
