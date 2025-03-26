@@ -1,4 +1,4 @@
-package allweeks.weektwo;
+package Interview_Preparation;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

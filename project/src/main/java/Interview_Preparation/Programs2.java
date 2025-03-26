@@ -1,4 +1,4 @@
-package allweeks.weektwo;
+package Interview_Preparation;
 
 import java.util.*;
 
